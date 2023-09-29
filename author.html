@@ -8,36 +8,37 @@
 <h2>Getting input</h2>
 
 <form>
-    <label for="hidden-author">The hidden author name:</label>
-    <input type="password" id="hidden-author" value="Dickens">
-    <br>
-    <label for="guess-author">Guess the author:</label>
-    <input type="text" id="guess-author">
-    <br>
-    <input type="button" value="check the guess" onclick="checkAuthor()">
-</form>
-<div id="results">
-    Good: <span id="good-count">0</span> Oops: <span id="oops-count">0</span>
-</div>
-<script>
-    var good = 0;
-    var oops = 0;
-    function checkAuthor() { 
-        password = document.getElementById("hidden-author").value
-        guess = document.getElementById("guess-author").value
-        results = document.getElementById("results");
-        goodCount = document.getElementById("good-count");
-        oopsCount = document.getElementById("oops-count");
-        if (password === guess) {
-            good++;
-            alert("You got it right!");
-        } else {
-            oops++;
-            alert("Sorry!");
+        
+        <label for="hidden-author">The hidden author name:</label>
+        <input type="password" id="hidden-author" value="Dickens">
+        <br>
+        <label for="guess-author">Guess the author:</label>
+        <input type="text" id="guess-author">
+        <br>
+        <input type="button" value="Check the guess" onclick="checkAuthor()">
+    </form>
+    <div id="results">
+        Good: <span id="good-count">0</span> Oops: <span id="oops-count">0</span>
+    </div>
+    <script>
+        var good = 0;
+        var oops = 0;
+        function checkAuthor() {
+            password = document.getElementById("hidden-author").value
+               guess = document.getElementById("guess-author").value
+            results = document.getElementById("results");
+            goodCount = document.getElementById("good-count");
+            oopsCount = document.getElementById("oops-count");
+            if (password === guess) {
+                good++;
+                alert("You got it right!");
+            } else {
+                oops++;
+                alert("Sorry!");
+            }
+            goodCount.innerHTML = good;
+            oopsCount.innerHTML = oops;
         }
-        goodCount.innerHTML = good;
-        oopsCount.innerHTML = oops;
-    }
-</script>
+    </script>
 </body>
 </html>
