@@ -23,25 +23,24 @@
     var good = 0;
     var oops = 0;
     function checkAuthor() { 
-        var hiddenAuthorInput = document.getElementById("hidden-author");
-        var guessAuthorInput = document.getElementById("guess-author");
-        var resultsElement = document.getElementById("results");
-        var goodCountElement = document.getElementById("good-count");
-        var oopsCountElement = document.getElementById("oops-count");
-
-        var hiddenAuthorValue = hiddenAuthorInput.value;
-        var guessAuthorValue = guessAuthorInput.value;
+        password = document.getElementById("hidden-author").value
+        guess = document.getElementById("guess-author").value
+        results = document.getElementById("results");
+        goodCount = document.getElementById("good-count");
+        oopsCount = document.getElementById("oops-count");
 
         
-        if (hiddenAuthorValue === guessAuthorValue) {
+
+        
+        if (password === guess) {
             good++;
             alert("You got it right!");
         } else {
             oops++;
             alert("Sorry!");
         }
-        goodCountElement.innerHTML = good;
-        oopsCountElement.innerHTML = oops;
+        goodCount.innerHTML = good;
+        oopsCount.innerHTML = oops;
     }
 </script>
 
