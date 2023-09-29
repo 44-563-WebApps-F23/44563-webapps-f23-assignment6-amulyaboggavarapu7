@@ -3,7 +3,7 @@
  
 <body>
     <title>Java Script</title>
-    <h1>Amulya Boggavarapu Author Entry</h1>
+    <h1>Author Entry Amulya Boggavarapu</h1>
 
 <h2>Getting input</h2>
 
@@ -14,7 +14,7 @@
     <label for="guess-author">Guess the author:</label>
     <input type="text" id="guess-author">
     <br>
-    <input type="button" value="Check the guess" onclick="checkAuthor()">
+    <input type="button" value="check the guess" onclick="checkAuthor()">
 </form>
 <div id="results">
     Good: <span id="good-count">0</span> Oops: <span id="oops-count">0</span>
@@ -28,10 +28,6 @@
         results = document.getElementById("results");
         goodCount = document.getElementById("good-count");
         oopsCount = document.getElementById("oops-count");
-
-        
-
-        
         if (password === guess) {
             good++;
             alert("You got it right!");
@@ -43,7 +39,5 @@
         oopsCount.innerHTML = oops;
     }
 </script>
-
-
 </body>
 </html>
