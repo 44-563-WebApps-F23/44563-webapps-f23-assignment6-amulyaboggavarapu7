@@ -40,5 +40,35 @@
             oopsCount.innerHTML = oops;
         }
     </script>
+        <div id="imageContainer">
+        <img  id="cityImage" src="omaha.jpg" alt="City Image" width="100" height="100" onclick="selectImage()">
+    </div>
+    <script>
+        var useImage = 1;
+        function selectImage() {
+            var image = document.getElementById("cityImage");
+            switch (useImage) {
+                case 1:
+                    image.src = "banglore.jpg";
+                    useImage = 2;
+                    break;
+                case 2:
+                    
+                    image.src = "vancouver.jpg";
+                    useImage = 3;
+                    break;
+                case 3:
+                    image.src = "omaha.jpg";
+                    useImage = 1;
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+       
+    
+
+    
 </body>
 </html>
