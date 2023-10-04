@@ -3,6 +3,8 @@
  
 <body>
     <title>Java Script</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <h1>Author Entry Amulya Boggavarapu</h1>
 
 <h2>Getting input</h2>
@@ -20,6 +22,9 @@
     <div id="results">
         Good: <span id="good-count">0</span> Oops: <span id="oops-count">0</span>
     </div>
+    <div id="imageContainer">
+        <img  id="cityImage" src="omaha.jpg" alt="City Image" width="100" height="100" onclick="selectImage()">
+    </div>
     <script>
         var good = 0;
         var oops = 0;
@@ -29,7 +34,10 @@
             results = document.getElementById("results");
             goodCount = document.getElementById("good-count");
             oopsCount = document.getElementById("oops-count");
-            if (password === guess) {
+            if(oops>=7){
+                wrongMethod()
+            }
+            else if (password === guess) {
                 good++;
                 alert("You got it right!");
             } else {
@@ -39,11 +47,10 @@
             goodCount.innerHTML = good;
             oopsCount.innerHTML = oops;
         }
-    </script>
-        <div id="imageContainer">
-        <img  id="cityImage" src="omaha.jpg" alt="City Image" width="100" height="100" onclick="selectImage()">
-    </div>
-    <script>
+        function wrongMethod(){
+            alert("Sorry, ran out of gusses.")
+            document.getElementById("btn").disabled=true
+        }
         var useImage = 1;
         function selectImage() {
             var image = document.getElementById("cityImage");
